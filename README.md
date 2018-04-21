@@ -59,9 +59,8 @@ Bring you to the current state of Ethereum.
 在 Github 協作，以 Gitbook 發行。協作者以 Pull Request 提交更改。會有同儕審查。
 
 ```bash
-$ npm install -g gitbook-cli
-$ gitbook install
-$ gitbook serve
+$ make install
+$ make serve
 ```
 
 

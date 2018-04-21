@@ -1,0 +1,4 @@
+.bookignore
+.gitignore
+literature.bib
+Makefile
