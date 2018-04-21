@@ -192,8 +192,6 @@
 <p>&#x7BC0;&#x9EDE;&#x7684; ID &#x662F;&#x4E00;&#x500B; b = 512 &#x4F4D;&#x5143; &#xFF08;&#x6216; 64 &#x4F4D;&#x5143;&#x7D44;&#xFF09;&#x7684;&#x6A62;&#x5713;&#x66F2;&#x7DDA; ECDSA &#x516C;&#x9470;&#x3002;</p>
 <p>&#x4E00;&#x822C;&#x7BC0;&#x9EDE;&#x4EE5; <code>enode://{ID}@{IP}:{port}</code> &#x683C;&#x5F0F;&#x8A18;&#x8F09;&#x3002;&#x5982;&#x4EE5;&#x4E0B;&#x7BC4;&#x4F8B;&#xFF1A;</p>
 <p><code>enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c284339968eef29b69ad0dce72a4d8db5ebb4968de0e3bec910127f134779fbcb0cb6d3331163c@52.16.188.185:30303</code></p>
-<p>&#x5BEB;&#x6B7B;&#x5728; Geth &#x5BA2;&#x6236;&#x7AEF;&#x4E2D;&#x7684;&#x7A2E;&#x5B50;&#x7BC0;&#x9EDE;</p>
-<p><a href="https://github.com/ethereum/go-ethereum/blob/master/params/bootnodes.go" target="_blank">https://github.com/ethereum/go-ethereum/blob/master/params/bootnodes.go</a></p>
 <h3 id="&#x7DB2;&#x8DEF;&#x9023;&#x7DDA;">&#x7DB2;&#x8DEF;&#x9023;&#x7DDA;</h3>
 <h4 id="udp-&#x9023;&#x7DDA;">UDP &#x9023;&#x7DDA;</h4>
 <p>UDP &#x7528;&#x4F86;&#x4EA4;&#x63DB;&#x9EDE;&#x5C0D;&#x9EDE;&#x7DB2;&#x8DEF;&#x7684;&#x8CC7;&#x8A0A;&#x3002;&#x7528; UDP &#x4EA4;&#x63DB;&#x7684;&#x8A0A;&#x606F;&#x6709;&#x56DB;&#x7A2E;&#x985E;&#x5225;&#xFF1A;</p>
@@ -204,15 +202,79 @@
 <p>&#x6240;&#x6709;&#x7684; UDP &#x8A0A;&#x606F;&#x90FD;&#x6709;&#x52A0;&#x6642;&#x9593;&#x6233;&#xFF0C;&#x4E26;&#x7528;&#x767C;&#x9001;&#x8005;&#x7684; ECDSA &#x516C;&#x9470;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x7BC0;&#x9EDE; ID&#xFF09;&#x52A0;&#x5BC6;&#x4E14;&#x8A8D;&#x8B49;&#x904E;&#x3002;&#x70BA;&#x4E86;&#x907F;&#x514D;&#x91CD;&#x653E;&#x653B;&#x64CA;&#xFF0C;&#x5BA2;&#x6236;&#x7AEF;&#x6703;&#x4E1F;&#x68C4;&#x4EFB;&#x4F55;&#x76F8;&#x5DEE;&#x672C;&#x5730;&#x6642;&#x9593; 20 &#x79D2;&#x4EE5;&#x4E0A;&#x7684;&#x8A0A;&#x606F;&#x3002;&#x70BA;&#x4E86;&#x907F;&#x514D;&#x507D;&#x9020; IP &#x50B3;&#x4F86;&#x7684; <code>pong</code> &#xFF0C; <code>pong</code> &#x88E1;&#x4E5F;&#x8981;&#x52A0;&#x4E0A; <code>ping</code> &#x7684;&#x96DC;&#x6E4A;&#x503C;&#x3002;</p>
 <h4 id="tcp-&#x9023;&#x7DDA;">TCP &#x9023;&#x7DDA;</h4>
 <p>&#x6240;&#x6709;&#x300C;&#x5340;&#x584A;&#x93C8;&#x300D;&#x7684;&#x8CC7;&#x8A0A;&#x5247;&#x662F;&#x900F;&#x904E; TCP &#x9023;&#x7DDA;&#x4EA4;&#x63DB;&#xFF0C;&#x4E5F;&#x662F;&#x52A0;&#x5BC6;&#x3001;&#x8A8D;&#x8B49;&#x904E;&#x7684;&#x3002;&#x5BA2;&#x6236;&#x7AEF;&#x53EF;&#x4EE5;&#x8A2D;&#x5B9A; TCP &#x9023;&#x7DDA;&#x7684;&#x7E3D;&#x6578;&#x4E0A;&#x9650; <code>maxpeers</code>&#xFF0C;&#x9810;&#x8A2D;&#x70BA; 25 &#x3002;</p>
-<h3 id="&#x5132;&#x5B58;&#x7DB2;&#x8DEF;&#x8CC7;&#x8A0A;">&#x5132;&#x5B58;&#x7DB2;&#x8DEF;&#x8CC7;&#x8A0A;</h3>
+<h3 id="&#x7DB2;&#x8DEF;&#x8CC7;&#x8A0A;&#x5132;&#x5B58;&#x65B9;&#x5F0F;">&#x7DB2;&#x8DEF;&#x8CC7;&#x8A0A;&#x5132;&#x5B58;&#x65B9;&#x5F0F;</h3>
 <p>&#x5BA2;&#x6236;&#x7AEF;&#x6703;&#x4EE5;&#x5169;&#x7A2E;&#x65B9;&#x5F0F;&#x5132;&#x5B58;&#x5176;&#x4ED6;&#x7BC0;&#x9EDE;&#x7684;&#x8CC7;&#x8A0A;&#x3002;&#x7B2C;&#x4E00;&#x7A2E;&#x662F;&#x9577;&#x671F;&#x7684;&#x8CC7;&#x6599;&#x5EAB; <code>db</code>&#xFF0C;&#x9019;&#x6703;&#x5B58;&#x5728;&#x786C;&#x789F;&#x4E2D;&#xFF0C;&#x7576;&#x5BA2;&#x6236;&#x7AEF;&#x91CD;&#x555F;&#x6642;&#x8CC7;&#x6599;&#x4E0D;&#x6703;&#x6D88;&#x6EC5;&#x3002;&#x7B2C;&#x4E8C;&#x7A2E;&#x662F;&#x77ED;&#x671F;&#x7684;&#x8CC7;&#x6599;&#x5EAB; <code>table</code>&#xFF0C;&#x9019;&#x5728;&#x5BA2;&#x6236;&#x7AEF;&#x91CD;&#x555F;&#x6642;&#x6703;&#x6E05;&#x7A7A;&#x3002;</p>
-<p>&#x5728; <code>db</code> &#x4E2D;&#x5132;&#x5B58;&#x5BA2;&#x6236;&#x7AEF;&#x5DF2;&#x7D93;&#x898B;&#x904E;&#x7684;&#x7BC0;&#x9EDE;&#xFF08;&#x5DF2;&#x7D93;&#x898B;&#x904E;&#x7684;&#x5B9A;&#x7FA9;&#x662F;&#x6709;&#x6536;&#x904E;&#x6B63;&#x78BA; <code>pong</code> &#x8A0A;&#x606F;&#xFF09;&#x3002; <code>db</code> &#x4E26;&#x6C92;&#x6709;&#x5BB9;&#x91CF;&#x7684;&#x9650;&#x5236;&#x3002;&#x6BCF;&#x500B; <code>db</code> &#x7684;&#x8A18;&#x9304;&#x5305;&#x542B;&#x7BC0;&#x9EDE; ID &#x3001;IP &#x5730;&#x5740;&#x3001;TCP &#x7AEF;&#x53E3;&#x3001;UDP &#x7AEF;&#x53E3;&#x3001;&#x4E0A;&#x6B21;&#x9001; <code>ping</code> &#x7684;&#x6642;&#x9593;&#x3001;&#x4E0A;&#x6B21;&#x6536;&#x904E; <code>pong</code> &#x7684;&#x6642;&#x9593;&#xFF0C;&#x4EE5;&#x53CA;&#x8A72;&#x7BC0;&#x9EDE;&#x7121;&#x6CD5;&#x56DE;&#x61C9; <code>findnode</code> &#x7684;&#x6B21;&#x6578;&#x3002;&#x4E00;&#x500B;&#x7BC0;&#x9EDE;&#x7684;&#x300C;&#x5E74;&#x7D00;&#x300D;&#x662F;&#x4E0A;&#x6B21;&#x6536;&#x5230; <code>pong</code> &#x7684;&#x6642;&#x9593;&#x81F3;&#x4ECA;&#x3002;&#x6BCF;&#x500B;&#x5C0F;&#x6642;&#x5BA2;&#x6236;&#x7AEF;&#x6703;&#x6E05;&#x7406;&#x6389; <code>db</code> &#x4E2D;&#x5E74;&#x7D00;&#x8D85;&#x904E; 1 &#x5929;&#x7684;&#x7BC0;&#x9EDE;&#x3002;</p>
-<p>&#x5728; <code>table</code> &#x4E2D;&#xFF0C;&#x5305;&#x542B; 256 &#x500B;&#x6C34;&#x6876;&#xFF0C;&#x6BCF;&#x500B;&#x6C34;&#x6876;&#x53EF;&#x4EE5;&#x5305;&#x542B; k=16 &#x7B46;&#x8A18;&#x9304;&#x3002;&#x6BCF;&#x500B;&#x8A18;&#x9304;&#x8A18;&#x8F09;&#x7BC0;&#x9EDE; ID &#x3001;IP &#x5730;&#x5740;&#x3001;TCP &#x7AEF;&#x53E3;&#x3001;UDP &#x7AEF;&#x53E3;&#x3002;&#x6BCF;&#x7B46;&#x8A18;&#x9304;&#x4EE5;&#x52A0;&#x5165;&#x6876;&#x5B50;&#x7684;&#x9806;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x7576;&#x5BA2;&#x6236;&#x7AEF;&#x767C;&#x73FE;&#x4E00;&#x500B;&#x65B0;&#x7BC0;&#x9EDE;&#xFF0C;&#x5C0D;&#x61C9;&#x5230;&#x4E00;&#x500B;&#x5DF2;&#x6EFF;&#x7684;&#x6876;&#x5B50;&#xFF0C;&#x5BA2;&#x6236;&#x7AEF;&#x6703;&#x53BB; <code>ping</code> &#x6876;&#x5B50;&#x4E2D;&#x6700;&#x5F8C;&#x4E00;&#x500B;&#x7BC0;&#x9EDE;&#xFF08;&#x6700;&#x8001;&#x7684;&#xFF09;&#x3002;&#x7BC0;&#x9EDE;&#x6703;&#x88AB;&#x79FB;&#x51FA; <code>table</code> &#x5982;&#x679C;&#x7121;&#x6CD5;&#x56DE;&#x61C9; <code>findnode</code> &#x81F3;&#x591A;&#x56DB;&#x6B21;&#x3002;</p>
-<p>(TBD)</p>
-<h3 id="populating-the-data-structures">Populating the data structures</h3>
-<h3 id="seeding">Seeding</h3>
-<h3 id="selecting-peers">Selecting peers</h3>
-<h3 id="&#x5B50;&#x5354;&#x5B9A;-sub-protocol">&#x5B50;&#x5354;&#x5B9A; Sub protocol</h3>
+<table>
+<thead>
+<tr>
+<th>&#x884C;&#x70BA; \ &#x5132;&#x5B58;&#x65B9;&#x5F0F;</th>
+<th><code>db</code></th>
+<th><code>table</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5BA2;&#x6236;&#x7AEF;&#x91CD;&#x555F;&#x6642;</td>
+<td>&#x4FDD;&#x7559;&#x8A18;&#x9304;</td>
+<td>&#x6E05;&#x7A7A;&#x8A18;&#x9304;</td>
+</tr>
+<tr>
+<td>&#x8A18;&#x8F09;&#x5167;&#x5BB9;</td>
+<td>&#x7BC0;&#x9EDE; ID &#x3001;IP &#x5730;&#x5740;&#x3001;TCP &#x7AEF;&#x53E3;&#x3001;UDP &#x7AEF;&#x53E3;&#x3001;&#x4E0A;&#x6B21;&#x9001; <code>ping</code> &#x7684;&#x6642;&#x9593;&#x3001;&#x4E0A;&#x6B21;&#x6536;&#x904E; <code>pong</code> &#x7684;&#x6642;&#x9593;&#xFF0C;&#x4EE5;&#x53CA;&#x8A72;&#x7BC0;&#x9EDE;&#x7121;&#x6CD5;&#x56DE;&#x61C9; <code>findnode</code> &#x7684;&#x6B21;&#x6578;</td>
+<td>&#x7BC0;&#x9EDE; ID &#x3001;IP &#x5730;&#x5740;&#x3001;TCP &#x7AEF;&#x53E3;&#x3001;UDP &#x7AEF;&#x53E3;</td>
+</tr>
+<tr>
+<td>&#x8A18;&#x9304;&#x4E0A;&#x9650;</td>
+<td>&#x7121;&#x4E0A;&#x9650;</td>
+<td>&#x5305;&#x542B; 256 &#x500B;&#x6C34;&#x6876;&#xFF0C;&#x6BCF;&#x500B;&#x6C34;&#x6876;&#x53EF;&#x4EE5;&#x5305;&#x542B; k=16 &#x7B46;&#x8A18;&#x9304;</td>
+</tr>
+<tr>
+<td>&#x65B0;&#x589E;&#x8A18;&#x9304;</td>
+<td>&#x6709;&#x6536;&#x904E;&#x6B63;&#x78BA; <code>pong</code> &#x8A0A;&#x606F;&#x7684;&#x7BC0;&#x9EDE;&#x5373;&#x65B0;&#x589E;</td>
+<td>&#x628A;&#x65B0;&#x7BC0;&#x9EDE;&#x52A0;&#x5165;&#x5C0D;&#x61C9;&#x7684;&#x6876;&#x5B50; <sup><a href="#fn_1" id="reffn_1">1</a></sup>&#xFF0C;&#x82E5;&#x6876;&#x5B50;&#x5DF2;&#x6EFF;&#xFF0C;&#x6703;&#x53BB; <code>ping</code> &#x6876;&#x5B50;&#x4E2D;&#x6700;&#x8001;&#x7684;&#x7BC0;&#x9EDE;&#x3002;&#x8001;&#x7BC0;&#x9EDE;&#x6709;&#x56DE;&#x61C9;&#x5247;&#x4E0D;&#x65B0;&#x589E;&#x65B0;&#x7BC0;&#x9EDE;&#xFF0C;&#x7121;&#x56DE;&#x61C9;&#x5247;&#x4EE5;&#x65B0;&#x7BC0;&#x9EDE;&#x53D6;&#x4EE3;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x6E05;&#x7406;&#x8A18;&#x9304;</td>
+<td>&#x6BCF;&#x5C0F;&#x6642;&#x6703;&#x6E05;&#x7406;&#x6389; <code>db</code> &#x4E2D;&#xFF0C;&#x4E0A;&#x6B21;&#x6536;&#x5230; <code>pong</code> &#x7684;&#x6642;&#x9593;&#x8D85;&#x904E; 1 &#x5929;&#x7684;&#x7BC0;&#x9EDE;&#x3002;</td>
+<td>&#x7BC0;&#x9EDE;&#x5982;&#x679C;&#x56DB;&#x6B21;&#x7121;&#x6CD5;&#x56DE;&#x61C9; <code>findnode</code>&#xFF0C;&#x6703;&#x88AB;&#x79FB;&#x51FA; <code>table</code> &#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x5B58;&#x5165;&#x8CC7;&#x6599;">&#x5B58;&#x5165;&#x8CC7;&#x6599;</h3>
+<p>&#x9032;&#x5165; db &#x8207; table &#x7684;&#x7BC0;&#x9EDE;&#x8CC7;&#x8A0A;&#xFF0C;&#x5927;&#x6982;&#x6703;&#x7D93;&#x7531;&#x4E0B;&#x5217;&#x65B9;&#x5F0F;&#x800C;&#x4F86;&#x3002;</p>
+<h4 id="&#x7A2E;&#x5B50;&#x7BC0;&#x9EDE;-bootstrap-nodes">&#x7A2E;&#x5B50;&#x7BC0;&#x9EDE; Bootstrap Nodes</h4>
+<p>&#x5BA2;&#x6236;&#x7AEF;&#x7B2C;&#x4E00;&#x6B21;&#x555F;&#x52D5;&#x6642;&#xFF0C;&#x53EA;&#x77E5;&#x9053; 6 &#x500B;&#x5BEB;&#x6B7B;&#x5728;&#x5BA2;&#x6236;&#x7AEF;&#x4E2D;&#x7684;&#x7BC0;&#x9EDE;&#x3002;&#x4F8B;&#x5982;&#xFF1A;&#x5BEB;&#x6B7B;&#x5728; Geth &#x5BA2;&#x6236;&#x7AEF;&#x4E2D;&#x7684;<a href="https://github.com/ethereum/go-ethereum/blob/master/params/bootnodes.go" target="_blank">&#x7A2E;&#x5B50;&#x7BC0;&#x9EDE;</a></p>
+<h4 id="&#x7D81;&#x5B9A;-bonding">&#x7D81;&#x5B9A; Bonding</h4>
+<p>&#x7576;&#x5BA2;&#x6236;&#x7AEF;&#x60F3;&#x8981;&#x7D81;&#x5B9A;&#x67D0;&#x500B;&#x7BC0;&#x9EDE;&#x6642;&#xFF0C;&#x5BA2;&#x6236;&#x7AEF;&#x9996;&#x5148;&#x6AA2;&#x67E5;</p>
+<ol>
+<li>&#x7BC0;&#x9EDE;&#x662F;&#x5426;&#x5B58;&#x5728; <code>db</code></li>
+<li><code>db</code> &#x8A18;&#x8F09;&#x8A72;&#x7BC0;&#x9EDE;&#x6C92;&#x6709;&#x56DE;&#x61C9; <code>findnode</code> &#x5931;&#x6557;&#x7684;&#x8A18;&#x9304;&#x3002;</li>
+<li><code>db</code> &#x8A18;&#x8F09;&#x8A72;&#x7BC0;&#x9EDE; 24 &#x5C0F;&#x6642;&#x5167;&#x6709;&#x6210;&#x529F;&#x56DE;&#x61C9; <code>pong</code> &#x3002;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x4E09;&#x500B;&#x689D;&#x4EF6;&#x6210;&#x7ACB;&#xFF0C;&#x5BA2;&#x6236;&#x7AEF;&#x6703;&#x7ACB;&#x5373;&#x5C07;&#x7BC0;&#x9EDE;&#x52A0;&#x5230; <code>table</code> &#x88E1;&#x9762;&#x3002;&#x5426;&#x5247;&#x5BA2;&#x6236;&#x7AEF;&#x6703; <code>ping</code> &#x8A72;&#x7BC0;&#x9EDE;&#xFF0C;&#x5982;&#x679C;&#x7BC0;&#x9EDE;&#x6B63;&#x78BA;&#x56DE;&#x61C9; <code>pong</code> &#xFF0C;&#x5247;&#x7D81;&#x5B9A;&#x6210;&#x529F;&#x3002;&#x5982;&#x679C;&#x7D81;&#x5B9A;&#x6210;&#x529F;&#xFF0C;&#x5247;&#x6703;&#x628A;&#x7BC0;&#x9EDE;&#x52A0;&#x5165;&#x6216;&#x66F4;&#x65B0;&#x5230; <code>db</code> &#x4E2D;&#xFF0C;&#x4E5F;&#x6703;&#x5617;&#x8A66;&#x52A0;&#x5165; <code>table</code> &#x3002;</p>
+<h4 id="&#x5916;&#x90E8;&#x767C;&#x8D77;&#x7684;-ping-unsolicited-pings">&#x5916;&#x90E8;&#x767C;&#x8D77;&#x7684; <code>ping</code> Unsolicited pings</h4>
+<p>&#x5BA2;&#x6236;&#x7AEF;&#x63A5;&#x6536;&#x5F9E;&#x5176;&#x4ED6;&#x7BC0;&#x9EDE;&#x767C;&#x8D77;&#x7684; <code>ping</code> &#xFF0C;&#x9019;&#x7A2E;&#x76F4;&#x63A5;&#x56DE;&#x61C9; <code>pong</code> &#x5C31;&#x5B8C;&#x6210;&#x7D81;&#x5B9A;&#x4E86;&#x3002;</p>
+<h4 id="lookup">Lookup</h4>
+<p>&#x5BA2;&#x6236;&#x7AEF;&#x4E5F;&#x53EF;&#x900F;&#x904E; <code>lookup(t)</code> &#x4F86;&#x627E;&#x5C0B;&#x7BC0;&#x9EDE;&#x3002;&#x9019;&#x662F;&#x524D;&#x8FF0;&#x7BC0;&#x9EDE;&#x767C;&#x6398;&#xFF0C;&#x900F;&#x904E;&#x4E0D;&#x65B7;&#x8FED;&#x4EE3;&#x7684; <code>findnode</code> &#x8A62;&#x554F;&#xFF0C;&#x627E;&#x5230;&#x6700;&#x5F8C; 16 &#x500B;&#x6700;&#x63A5;&#x8FD1; t &#x7684;&#x7BC0;&#x9EDE;&#x3002;</p>
+<p>&#x9019; 16 &#x500B;&#x7BC0;&#x9EDE;&#x6703;&#x88AB;&#x52A0;&#x5165; <code>lookup_buffer</code> &#x9019;&#x500B;&#x8CC7;&#x6599;&#x7D50;&#x69CB;&#xFF08;FIFO queue&#xFF09;&#x4E2D;&#x3002;</p>
+<h3 id="&#x64AD;&#x7A2E;-seeding">&#x64AD;&#x7A2E; Seeding</h3>
+<p>&#x9019;&#x662F;&#x5BA2;&#x6236;&#x7AEF;&#x525B;&#x555F;&#x52D5;&#x6642;&#xFF0C;&#x8981;&#x8B93;&#x5176;&#x4ED6;&#x7BC0;&#x9EDE;&#x5F97;&#x5230;&#x9019;&#x500B;&#x5BA2;&#x6236;&#x7AEF;&#x7684;&#x65B0; ID &#x3002;&#x5BA2;&#x6236;&#x7AEF;&#x6703;</p>
+<ol>
+<li>&#x7D81;&#x5B9A;&#x516D;&#x500B;&#x7A2E;&#x5B50;&#x7BC0;&#x9EDE;</li>
+<li>&#x7D81;&#x5B9A; <code>db</code> &#x4E2D;&#x96A8;&#x6A5F;&#x9078;&#x64C7; 30 &#x500B;&#x4EE5;&#x4E0B;&#x5E74;&#x7D00;&#x5C0F;&#x65BC; 5 &#x5929;&#x7684;&#x7BC0;&#x9EDE;&#x3002;</li>
+</ol>
+<p>&#x9019;&#x5169;&#x7A2E;&#x7D81;&#x5B9A;&#x5B8C;&#x6210;&#x4E4B;&#x5F8C;&#xFF0C;&#x5BA2;&#x6236;&#x7AEF;&#x57F7;&#x884C; <code>lookup(self)</code> &#xFF0C;&#x5176;&#x4E2D; <code>self</code> &#x662F;&#x5BA2;&#x6236;&#x7AEF;&#x81EA;&#x5DF1; ID &#x7684; SHA3 &#x96DC;&#x6E4A;&#x503C;&#x3002;</p>
+<h3 id="&#x9078;&#x64C7;&#x7BC0;&#x9EDE;-selecting-peers-&#xFF08;&#x5411;&#x5916;&#x7684;-tcp-&#x9023;&#x7DDA;&#xFF09;">&#x9078;&#x64C7;&#x7BC0;&#x9EDE; Selecting peers &#xFF08;&#x5411;&#x5916;&#x7684; TCP &#x9023;&#x7DDA;&#xFF09;</h3>
+<p>&#x5927;&#x81F4;&#x800C;&#x8A00;&#xFF0C;&#x4EE5;&#x592A;&#x574A;&#x5BA2;&#x6236;&#x7AEF;&#x6703;&#x9078;&#x64C7;&#x4E00;&#x534A;&#x4F86;&#x81EA; <code>lookup_buffer</code> &#xFF0C;&#x4E00;&#x534A;&#x4F86;&#x81EA; <code>table</code> &#x3002;</p>
+<p>&#x4EE5;&#x592A;&#x574A;&#x7BC0;&#x9EDE;&#x555F;&#x52D5;&#x6642;&#xFF0C;&#x4E00;&#x500B;&#x4EFB;&#x52D9;&#x57F7;&#x884C;&#x5668;&#xFF08;Task Runner&#xFF09;&#x6703;&#x4E00;&#x76F4;&#x5B58;&#x5165; <code>db</code> &#x8207; <code>table</code> &#x8CC7;&#x6599;&#xFF0C;&#x76F4;&#x5230;&#x5EFA;&#x7ACB;&#x5916;&#x806F; TCP &#x6578;&#x91CF;&#x9054;&#x5230; <code>maxpeers</code> &#x7684;&#x4E00;&#x534A;&#xFF08;&#x9810;&#x8A2D; 13&#xFF09;&#x3002;</p>
+<p>&#x4EFB;&#x52D9;&#x57F7;&#x884C;&#x5668;&#x9810;&#x8A2D;&#x6703;&#x6709; 16 &#x500B;&#x4EFB;&#x52D9;&#x540C;&#x6B65;&#x57F7;&#x884C;&#x3002;&#x4EFB;&#x52D9;&#x6709;&#x5169;&#x7A2E;&#xFF1A; <code>dial_task</code> &#x8207; <code>discover_task</code> &#x3002;<code>discover_task</code> &#x6703;&#x4EE5;&#x96A8;&#x6A5F; 256 &#x4F4D;&#x5143;&#x5B57;&#x4E32; <code>t</code> &#x57F7;&#x884C; <code>lookup (t)</code> &#x3002;<code>dial_task</code> &#x6703;&#x8A66;&#x5716;&#x8207;&#x5176;&#x4ED6;&#x7BC0;&#x9EDE;&#x5EFA;&#x7ACB;&#x9023;&#x7DDA;&#x3002;&#x9019;&#x500B;&#x4EFB;&#x52D9;&#x57F7;&#x884C;&#x524D;&#xFF0C;&#x6703;&#x6AA2;&#x67E5;&#x8A72;&#x7BC0;&#x9EDE;</p>
+<ol>
+<li>&#x73FE;&#x5728;&#x6C92;&#x6B63;&#x5728;&#x88AB; dial</li>
+<li>&#x4E26;&#x975E;&#x5DF2;&#x9023;&#x7DDA;&#x7684;&#x7BC0;&#x9EDE;</li>
+<li>&#x4E26;&#x975E;&#x81EA;&#x5DF1;</li>
+<li>&#x6C92;&#x88AB;&#x9ED1;&#x540D;&#x55AE;</li>
+<li>&#x6700;&#x8FD1;&#x6C92;&#x88AB; dial &#x904E;</li>
+</ol>
 <h2 id="&#x653B;&#x64CA;&#x6A21;&#x578B;">&#x653B;&#x64CA;&#x6A21;&#x578B;</h2>
 <p>Marcus, Heilman and Goldberg (2018) &#x662F;&#x500B;&#x5F88;&#x597D;&#x7684;&#x958B;&#x59CB;&#x3002;&#x9664;&#x4E86;&#x6709;&#x4E9B;&#x76F8;&#x95DC;&#x6BD4;&#x7279;&#x5E63;&#x7684;&#x9EDE;&#x5C0D;&#x9EDE;&#x7DB2;&#x8DEF;&#x653B;&#x64CA;&#x6587;&#x737B;&#x56DE;&#x9867;&#xFF0C;&#x5167;&#x6587;&#x63D0;&#x5230;&#x7684;&#x65E5;&#x8755;&#x653B;&#x64CA;&#x4E5F;&#x6709;&#x8A31;&#x591A;&#x884D;&#x751F;&#x7684;&#x653B;&#x64CA;&#x65B9;&#x5F0F;&#x3002;</p>
 <p>&#xFF08;TBD&#xFF09;</p>
@@ -220,6 +282,10 @@
 <p><div class="csl-bib-body">
   <div data-csl-entry-id="cryptoeprint:2018:236" class="csl-entry">Marcus, Y., Heilman, E., &amp; Goldberg, S. (2018). <i>Low-Resource Eclipse Attacks on Ethereum&#x2019;s Peer-to-Peer Network</i>.</div>
 </div></p>
+<h2 id="&#x9644;&#x8A3B;">&#x9644;&#x8A3B;</h2>
+<blockquote id="fn_1">
+<sup>1</sup>. &#x9650;&#x65BC;&#x7BC7;&#x5E45;&#x4E0D;&#x4ECB;&#x7D39;&#xFF0C;&#x8AD6;&#x6587;&#x6709;&#x89E3;&#x8AAA;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
+</blockquote>
 
                                 
                                 </section>
@@ -263,7 +329,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"p2p","level":"1.2","depth":1,"next":{"title":"詞彙表","level":"1.3","depth":1,"path":"GLOSSARY.md","ref":"GLOSSARY.md","articles":[]},"previous":{"title":"本書介紹","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["bibtex-citations-and-references","livereload"],"pluginsConfig":{"bibtex-citations-and-references":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"p2p.md","mtime":"2018-04-21T12:38:01.559Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T12:52:38.943Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"p2p","level":"1.2","depth":1,"next":{"title":"詞彙表","level":"1.3","depth":1,"path":"GLOSSARY.md","ref":"GLOSSARY.md","articles":[]},"previous":{"title":"本書介紹","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["bibtex-citations-and-references","livereload"],"pluginsConfig":{"bibtex-citations-and-references":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"p2p.md","mtime":"2018-04-21T14:40:25.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-21T14:40:28.459Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
