@@ -56,9 +56,10 @@ Bring you to the current state of Ethereum.
 
 ## 協作方式
 
-在 Github 協作，以 Gitbook 發行。協作者以 Pull Request 提交更改。會有同儕審查。
+在 [Github](https://github.com/EtherTW/a-fast-sync-to-ethereum) 協作，以 Gitbook 發行。協作者以 Pull Request 提交更改。會有同儕審查。
 
 ```bash
+$ git clone git@github.com:EtherTW/a-fast-sync-to-ethereum.git
 $ make install
 $ make serve
 ```
